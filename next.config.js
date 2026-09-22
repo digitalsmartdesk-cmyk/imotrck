@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/imotrck',
+  trailingSlash: true,
   images: {
-    domains: [],
+    unoptimized: true,
   },
 }
 

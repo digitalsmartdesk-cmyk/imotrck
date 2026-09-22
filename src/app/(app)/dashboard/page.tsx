@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+'use client'
 import Link from 'next/link'
 
 const MOCK_REPORTS = [
@@ -30,10 +30,7 @@ function DomainBar({ name, score }: { name: string; score: number }) {
   )
 }
 
-export default async function DashboardPage() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
+export default function DashboardPage() {
   const today = new Date()
   const dateStr = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
   const hour = today.getHours()
